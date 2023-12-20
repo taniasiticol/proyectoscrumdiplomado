@@ -1,20 +1,11 @@
 <?php
-//PHP7
-	//error_reporting(E_ALL);
-	//ini_set('display_errors', 1);
 $ret_db_con='s';
-/*$usu_sis=($_POST['nom_usu']);
-$query=$con->query("SELECT * from ususis where nom_usu like '$usu_sis'");
-$usu=$con->fetch($query);
-$tipo_usu=$usu['tip_usu'];
-*/
 include("aut_verifica.inc.php");
 
 $meses=array('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');	
 require_once "clases/base/menus.php";
 
 require_once  "clases/bd/MySQLConex.php";
-require_once("clases/gui/select.php");
 include "Connections/datos_conex.php";
 $con=new MySQLConex();
 $con->abrir('Connections/datos_conex.php');
@@ -29,19 +20,6 @@ $r_i=$con->query("SELECT * FROM institucion ");
 $fIns=$con->fetch($r_i);
 $nom_ins=$fIns['nom_ins'];
 
-
-//$imagenes=imagenes::getFilteredBy($con,'LOGO_INS');
-//$carp_logos=_sapred::getFilteredBy($con,'CARPETA_LOGOS');
-//$usu_sis=($_POST);
-
-$carp=array();
-$LogoIns=array();
-$rutaLogo="";
-if(is_array($carp_logos))
-	$carp=current($carp_logos);
-//if(is_array($imagenes))
-//	$LogoIns=current($imagenes);
-$rutaLogo=$carp->val_var.$LogoIns->url_img;
 ?>
 <!DOCTYPE html>
 <html lang="es">
