@@ -1,16 +1,9 @@
 <?php
-//  Autentificator
-// Cargamos variables
-
 include "Connections/datos_conex.php";
-
-// le damos un mobre a la sesion (por si quisieramos identificarla)
 session_name($usuarios_sesion);
 
-// iniciamos sesiones
 session_start();
 
-// destruimos la session de usuarios.
 session_destroy();
 require_once("bibliotecas/xajax/xajax_core/xajax.inc.php");
 $xajax=new xajax();
